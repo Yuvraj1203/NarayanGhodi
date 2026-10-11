@@ -28,7 +28,7 @@ export function Hero() {
       <div className="container-site relative pb-28 pt-32 text-center sm:pb-32">
         <p className="fade-rise eyebrow flex items-center justify-center gap-2 text-gold-300" style={{ animationDelay: '150ms' }}>
           <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
-          Udaipur · Rajasthan
+          Wedding Ghodi · Udaipur, Rajasthan
         </p>
 
         <h1

@@ -1,4 +1,4 @@
-import { BUSINESS, CONFIRMED_SERVICES, HERO_IMAGE, SITE_URL } from '@/lib/site-data';
+import { BUSINESS, CONFIRMED_SERVICES, SITE_URL } from '@/lib/site-data';
 
 /**
  * JSON-LD for local SEO. Only verified business facts are included.
@@ -16,11 +16,14 @@ export function StructuredData() {
       '@type': 'LocalBusiness',
       '@id': businessId,
       name: BUSINESS.name,
+      // Hindi name as shown on the Google Maps listing
+      alternateName: 'नारायण माली घोड़ी वाले',
       description:
         'Traditional Rajasthani wedding ghodi and horse services in Udaipur, Rajasthan.',
       url: SITE_URL,
       telephone: BUSINESS.phoneE164,
-      image: HERO_IMAGE.src.replace(/w=\d+/, 'w=1200'),
+      image: `${SITE_URL}/opengraph-image.jpg`,
+      logo: `${SITE_URL}/icon-512.png`,
       address: {
         '@type': 'PostalAddress',
         streetAddress: BUSINESS.address.street,
@@ -30,7 +33,7 @@ export function StructuredData() {
         addressCountry: BUSINESS.address.country,
       },
       hasMap: BUSINESS.mapsUrl,
-      areaServed: { '@type': 'City', name: 'Udaipur' },
+      areaServed: { '@type': 'City', name: 'Udaipur', containedInPlace: { '@type': 'State', name: 'Rajasthan' } },
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],

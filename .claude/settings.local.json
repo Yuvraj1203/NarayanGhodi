@@ -10,7 +10,18 @@
       "Bash(rm -rf /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck)",
       "Bash(mkdir -p /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck)",
       "Bash(rsync -a --exclude node_modules --exclude .next --exclude .env /Users/yuvrajsingh/Projects/pseudo/EventWeb/ /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck/)",
-      "Bash(ln -s /Users/yuvrajsingh/Projects/pseudo/EventWeb/node_modules /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck/node_modules)"
+      "Bash(ln -s /Users/yuvrajsingh/Projects/pseudo/EventWeb/node_modules /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck/node_modules)",
+      "Bash(sed -i '' s/font-family:Serif/font-family:OgSerif/g /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons/og.html)",
+      "Bash('/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --headless=new --disable-gpu --hide-scrollbars --allow-file-access-from-files --window-size=1200,630 --virtual-time-budget=3000 --screenshot=/private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons/og.png file:///private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons/og.html)",
+      "Bash(sips -s format jpeg -s formatOptions 82 /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons/og.png --out app/opengraph-image.jpg)",
+      "Bash(cp app/opengraph-image.jpg app/twitter-image.jpg)",
+      "Bash(sed -i '' \"/  formatDetection: { telephone: true, address: true, email: false },/d\" app/layout.tsx)",
+      "Bash(curl -s localhost:3125/)",
+      "Bash(pkill -f \"next start -p 3125\")",
+      "Bash(curl -s localhost:3000/favicon.ico -o /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons/served.ico)",
+      "Bash(python3 - /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons)",
+      "Bash(file /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons/frame*.png)",
+      "Bash(sips -g pixelWidth /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/icons/frame48.png)"
     ]
   }
 }
