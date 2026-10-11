@@ -1,21 +1,27 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, Manrope } from 'next/font/google';
+import localFont from 'next/font/local';
 import { BUSINESS, HERO_IMAGE, SITE_URL } from '@/lib/site-data';
 import { StructuredData } from '@/components/structured-data';
 
-const serif = Cormorant_Garamond({
-  subsets: ['latin'],
+// Self-hosted variable fonts (Latin subset from Google Fonts, OFL licensed) —
+// no network fetch at build or dev time.
+const serif = localFont({
+  src: [
+    { path: './fonts/cormorant-garamond-latin.woff2', weight: '500 700', style: 'normal' },
+    { path: './fonts/cormorant-garamond-italic-latin.woff2', weight: '500 700', style: 'italic' },
+  ],
   variable: '--font-serif',
   display: 'swap',
-  weight: ['500', '600', '700'],
-  style: ['normal', 'italic'],
+  fallback: ['Georgia', 'serif'],
 });
 
-const sans = Manrope({
-  subsets: ['latin'],
+const sans = localFont({
+  src: './fonts/manrope-latin.woff2',
+  weight: '200 800',
   variable: '--font-sans',
   display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
 });
 
 const TITLE = 'Wedding Ghodi in Udaipur | Narayan Mali Ghodi Wale';

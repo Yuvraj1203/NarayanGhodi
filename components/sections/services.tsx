@@ -7,7 +7,7 @@ import { Icon } from '@/components/icons';
 
 export function Services() {
   return (
-    <section id="services" aria-labelledby="services-title" className="relative bg-maroon-950 bg-jaali py-20 sm:py-28">
+    <section id="services" aria-labelledby="services-title" className="relative bg-maroon-950 jaali-texture py-20 sm:py-28">
       <div className="container-site">
         <SectionHeading
           id="services-title"
@@ -33,7 +33,7 @@ export function Services() {
                   alt={s.image.alt}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover opacity-70 transition-all duration-[1200ms] ease-out group-hover:scale-105 group-hover:opacity-50"
+                  className="object-cover opacity-70 transition-all [transition-duration:1200ms] ease-out group-hover:scale-105 group-hover:opacity-50"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-charcoal-950 via-charcoal-950/70 to-transparent" />
                 <div className="relative p-7">

@@ -5,7 +5,12 @@
       "Bash(npx next *)",
       "Bash(pkill -f \"next start -p 3123\")",
       "Bash(npx tsc *)",
-      "Bash(xargs sed -i '' 's/duration-\\\\[1\\\\.2s\\\\]/duration-[1200ms]/g')"
+      "Bash(xargs sed -i '' 's/duration-\\\\[1\\\\.2s\\\\]/duration-[1200ms]/g')",
+      "Bash(npm uninstall *)",
+      "Bash(rm -rf /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck)",
+      "Bash(mkdir -p /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck)",
+      "Bash(rsync -a --exclude node_modules --exclude .next --exclude .env /Users/yuvrajsingh/Projects/pseudo/EventWeb/ /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck/)",
+      "Bash(ln -s /Users/yuvrajsingh/Projects/pseudo/EventWeb/node_modules /private/tmp/claude-502/-Users-yuvrajsingh-Projects-pseudo-EventWeb/00b5c184-a8f0-4a0a-a7ca-b4b3b1759fed/scratchpad/buildcheck/node_modules)"
     ]
   }
 }

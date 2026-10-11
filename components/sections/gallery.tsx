@@ -103,7 +103,7 @@ export function Gallery() {
                   alt={img.alt}
                   fill
                   sizes="(min-width: 1024px) 33vw, 50vw"
-                  className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                  className="object-cover transition-transform [transition-duration:1200ms] ease-out group-hover:scale-105"
                 />
                 <span className="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-charcoal-950/80 via-transparent to-transparent p-3 opacity-0 transition-opacity duration-500 group-hover:opacity-100 sm:p-4">
                   <span className="text-left text-[11px] font-semibold uppercase tracking-[0.18em] text-gold-200">{img.category}</span>

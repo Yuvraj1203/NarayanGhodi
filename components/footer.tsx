@@ -10,7 +10,7 @@ export function Footer() {
   const link = 'text-sm text-ivory-200/70 transition-colors hover:text-gold-300';
 
   return (
-    <footer className="relative overflow-hidden bg-charcoal-950 bg-jaali pb-24 pt-20 text-ivory-100 md:pb-10">
+    <footer className="relative overflow-hidden bg-charcoal-950 jaali-texture pb-24 pt-20 text-ivory-100 md:pb-10">
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-500/60 to-transparent" />
       <div className="container-site">
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]">

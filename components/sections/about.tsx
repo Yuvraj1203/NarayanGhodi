@@ -16,7 +16,7 @@ export function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="relative bg-ivory-paper">
       {/* Trust strip */}
-      <div className="relative z-10 -mt-px bg-maroon-950 bg-jaali">
+      <div className="relative z-10 -mt-px bg-maroon-950 jaali-texture">
         <div className="container-site">
           <dl className="grid grid-cols-2 divide-gold-500/15 lg:grid-cols-4 lg:divide-x">
             {STATS.map((s, i) => (

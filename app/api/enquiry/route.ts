@@ -1,5 +1,4 @@
 import { NextResponse } from 'next/server';
-import { createClient } from '@supabase/supabase-js';
 import { z } from 'zod';
 
 export const dynamic = 'force-dynamic';
@@ -44,15 +43,29 @@ export async function POST(req: Request) {
   }
 
   const { company: _honeypot, message, ...rest } = parsed.data;
-  const supabase = createClient(url, key, { auth: { persistSession: false } });
-  const { error } = await supabase.from('enquiries').insert({
-    ...rest,
-    wedding_date: rest.wedding_date || null,
-    additional_requirements: message || null,
-  });
-
-  if (error) {
-    console.error('Enquiry insert failed:', error.message);
+  try {
+    // Supabase REST (PostgREST) insert — RLS allows anon INSERT on `enquiries`.
+    const res = await fetch(`${url.replace(/\/$/, '')}/rest/v1/enquiries`, {
+      method: 'POST',
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        'Content-Type': 'application/json',
+        Prefer: 'return=minimal',
+      },
+      body: JSON.stringify({
+        ...rest,
+        wedding_date: rest.wedding_date || null,
+        additional_requirements: message || null,
+      }),
+      cache: 'no-store',
+    });
+    if (!res.ok) {
+      console.error('Enquiry insert failed:', res.status, await res.text());
+      return NextResponse.json({ ok: true, stored: false });
+    }
+  } catch (err) {
+    console.error('Enquiry insert failed:', err);
     return NextResponse.json({ ok: true, stored: false });
   }
   return NextResponse.json({ ok: true, stored: true });

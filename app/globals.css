@@ -86,7 +86,7 @@
   }
 
   /* Subtle jaali (lattice) texture for dark sections */
-  .bg-jaali {
+  .jaali-texture {
     background-image: radial-gradient(hsl(40 58% 52% / 0.09) 1px, transparent 1px),
       radial-gradient(hsl(40 58% 52% / 0.05) 1px, transparent 1px);
     background-size: 28px 28px;

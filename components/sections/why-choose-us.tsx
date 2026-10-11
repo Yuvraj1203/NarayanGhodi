@@ -11,7 +11,7 @@ const FEATURE_IMAGE = {
 
 export function WhyChooseUs() {
   return (
-    <section aria-labelledby="why-title" className="relative overflow-hidden bg-maroon-950 bg-jaali py-20 sm:py-28">
+    <section aria-labelledby="why-title" className="relative overflow-hidden bg-maroon-950 jaali-texture py-20 sm:py-28">
       <div className="container-site grid items-center gap-14 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
         <div>
           <SectionHeading
