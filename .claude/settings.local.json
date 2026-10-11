@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -)",
+      "Bash(npx next *)",
+      "Bash(pkill -f \"next start -p 3123\")",
+      "Bash(npx tsc *)",
+      "Bash(xargs sed -i '' 's/duration-\\\\[1\\\\.2s\\\\]/duration-[1200ms]/g')"
+    ]
+  }
+}

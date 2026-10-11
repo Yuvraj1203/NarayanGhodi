@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 20 25% 10%;
+    --card: 40 30% 99%;
+    --card-foreground: 20 25% 10%;
+    --popover: 40 30% 99%;
+    --popover-foreground: 20 25% 10%;
+    --primary: 350 72% 20%;
+    --primary-foreground: 40 33% 97%;
+    --secondary: 350 65% 32%;
+    --secondary-foreground: 40 33% 97%;
+    --muted: 38 25% 92%;
+    --muted-foreground: 20 12% 38%;
+    --accent: 40 58% 52%;
+    --accent-foreground: 350 72% 15%;
+    --destructive: 0 72% 45%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 38 22% 84%;
+    --input: 38 22% 84%;
+    --ring: 40 58% 45%;
+    --radius: 0.25rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-serif;
+  }
+  ::selection {
+    background: hsl(40 58% 52% / 0.35);
+    color: hsl(350 72% 15%);
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply font-sans text-[11px] font-semibold uppercase tracking-[0.32em];
+  }
+
+  /* Gold hairline frame used on cards and imagery */
+  .gold-frame {
+    position: relative;
+  }
+  .gold-frame::after {
+    content: '';
+    position: absolute;
+    inset: 10px;
+    border: 1px solid hsl(40 58% 62% / 0.55);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .btn-gold {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 bg-gradient-to-br from-gold-400 via-gold-500 to-gold-600 px-7 font-sans text-sm font-semibold tracking-wide text-maroon-950 shadow-[0_10px_30px_-10px_hsl(40_60%_45%/0.6)] transition-all duration-300 hover:brightness-110 hover:shadow-[0_14px_36px_-10px_hsl(40_60%_45%/0.75)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-300 focus-visible:ring-offset-2 focus-visible:ring-offset-maroon-950 active:scale-[0.98];
+  }
+  .btn-outline-light {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 border border-ivory-100/35 px-7 font-sans text-sm font-semibold tracking-wide text-ivory-50 backdrop-blur-sm transition-all duration-300 hover:border-gold-400 hover:bg-ivory-50/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-300 active:scale-[0.98];
+  }
+  .btn-outline-dark {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 border border-maroon-900/25 px-7 font-sans text-sm font-semibold tracking-wide text-maroon-900 transition-all duration-300 hover:border-gold-600 hover:bg-gold-500/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-500 active:scale-[0.98];
+  }
+
+  /* Subtle jaali (lattice) texture for dark sections */
+  .bg-jaali {
+    background-image: radial-gradient(hsl(40 58% 52% / 0.09) 1px, transparent 1px),
+      radial-gradient(hsl(40 58% 52% / 0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+    background-position: 0 0, 14px 14px;
+  }
+
+  /* Grain-free warm paper tone for ivory sections */
+  .bg-ivory-paper {
+    background: radial-gradient(ellipse at top, hsl(40 40% 98%), hsl(38 30% 94%));
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-shadow-hero {
+    text-shadow: 0 2px 30px rgb(0 0 0 / 0.45);
+  }
+}
+
+/* ── Motion ─────────────────────────────────────────────────────────────── */
+
+/* Page entrance */
+@keyframes page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.page-in {
+  animation: page-in 0.7s ease-out both;
+}
+
+/* Hero word-by-word text reveal */
+@keyframes word-rise {
+  from {
+    opacity: 0;
+    transform: translateY(0.6em);
+    filter: blur(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+.word-rise {
+  display: inline-block;
+  animation: word-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-rise {
+  animation: fade-rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+
+/* Scroll cue */
+@keyframes scroll-cue {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(250%);
+  }
+}
+.scroll-cue {
+  animation: scroll-cue 2.2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+/* Scroll reveal (driven by <Reveal />) */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.reveal-image {
+  clip-path: inset(12% 6% 12% 6%);
+  opacity: 0;
+  transition: clip-path 1.2s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.8s ease-out;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+.reveal-image.is-visible {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal,
+  .reveal-image {
+    opacity: 1;
+    transform: none;
+    clip-path: none;
+  }
+}
